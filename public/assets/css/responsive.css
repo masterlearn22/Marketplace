@@ -1,0 +1,707 @@
+/* Responsive CSS untuk RunTech E-commerce */
+
+/* Large Devices (Desktops, kurang dari 1200px) */
+@media (max-width: 1199.98px) {
+  /* Kontainer dengan lebar maksimum lebih kecil */
+  .container {
+    max-width: 960px;
+  }
+
+  /* Judul pada hero dengan ukuran font lebih kecil */
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  /* Tata letak produk dengan sidebar lebih kecil */
+  .products-layout {
+    grid-template-columns: 220px 1fr;
+  }
+}
+
+/* Medium Devices (Tablet, kurang dari 992px) */
+@media (max-width: 991.98px) {
+  /* Kontainer dengan lebar maksimum lebih kecil */
+  .container {
+    max-width: 720px;
+  }
+
+  /* Konten hero dengan tata letak vertikal dan teks di tengah */
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Tombol pada hero dipusatkan */
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  /* Gambar pada hero dengan jarak atas */
+  .hero-image {
+    margin-top: 2rem;
+  }
+
+  /* Tata letak produk menjadi satu kolom */
+  .products-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Sidebar produk menjadi statis */
+  .products-sidebar {
+    position: static;
+    height: auto;
+  }
+
+  /* Opsi filter dalam grid responsif */
+  .filter-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+
+  /* Detail produk menjadi satu kolom */
+  .product-detail {
+    grid-template-columns: 1fr;
+  }
+
+  /* Tata letak keranjang menjadi satu kolom */
+  .cart-layout {
+    grid-template-columns: 1fr;
+  }
+
+  /* Ringkasan keranjang dengan jarak atas */
+  .cart-summary {
+    margin-top: 2rem;
+  }
+
+  /* Tata letak dashboard admin menjadi satu kolom */
+  .admin-layout {
+    grid-template-columns: 1fr;
+  }
+
+  /* Sidebar admin tersembunyi secara default */
+  .admin-sidebar {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    width: 250px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Sidebar admin aktif */
+  .admin-sidebar.active {
+    display: block;
+  }
+
+  /* Konten admin tanpa margin kiri */
+  .admin-content {
+    margin-left: 0;
+  }
+
+  /* Tata letak akun menjadi satu kolom */
+  .account-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Sidebar akun menjadi statis */
+  .account-sidebar {
+    position: static;
+    height: auto;
+  }
+
+  /* Navigasi akun dengan tata letak fleksibel */
+  .account-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  /* Tautan pada navigasi akun */
+  .account-nav a {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+  }
+}
+
+/* Small Devices (Landscape Phones, kurang dari 768px) */
+@media (max-width: 767.98px) {
+  /* Kontainer dengan lebar maksimum lebih kecil */
+  .container {
+    max-width: 540px;
+  }
+
+  /* Konten header dengan tinggi lebih kecil */
+  .header-content {
+    height: 3.5rem;
+  }
+
+  /* Navigasi utama tersembunyi secara default */
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--background-color);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+
+  /* Navigasi utama aktif */
+  .main-nav.active {
+    display: block;
+  }
+
+  /* Daftar navigasi utama dengan tata letak vertikal */
+  .main-nav ul {
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+
+  /* Item navigasi utama */
+  .main-nav li {
+    width: 100%;
+  }
+
+  /* Tautan pada navigasi utama */
+  .main-nav a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+  }
+
+  /* Tombol toggle menu mobile ditampilkan */
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  /* Grid produk dan artikel dengan dua kolom dan scroll horizontal */
+  .products-grid,
+  .articles-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    overflow-x: visible; /* Menghilangkan scroll horizontal */
+    padding-bottom: 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Kartu produk dan artikel tanpa flex shrink/grow */
+  .product-card,
+  .article-card {
+    width: auto !important; /* Sesuai dengan grid */
+    flex: none !important; /* Menghilangkan flex shrink/grow */
+    margin-bottom: 0;
+    scroll-snap-align: start;
+  }
+
+  /* Sembunyikan scrollbar tetapi tetap bisa scroll */
+  .products-grid::-webkit-scrollbar,
+  .articles-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .products-grid,
+  .articles-grid {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  /* Toolbar produk dengan tata letak vertikal */
+  .products-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  /* Kotak pencarian produk dengan lebar penuh */
+  .search-box {
+    width: 100%;
+    max-width: none;
+  }
+
+  /* Opsi pengurutan dengan lebar penuh */
+  .sort-options {
+    width: 100%;
+  }
+
+  /* Galeri produk dengan jarak bawah */
+  .product-gallery {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Aksi produk dengan tata letak vertikal */
+  .product-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Tombol aksi produk dengan lebar penuh */
+  .product-actions .btn {
+    width: 100%;
+  }
+
+  /* Tab dengan scroll horizontal */
+  .tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 0.5rem;
+  }
+
+  /* Tab autentikasi dengan tata letak vertikal */
+  .auth-tabs {
+    flex-direction: column;
+  }
+
+  /* Autentikasi sosial dengan tata letak vertikal */
+  .social-auth {
+    flex-direction: column;
+  }
+
+  /* Konten footer dengan satu kolom */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Wrapper tabel transaksi dengan scroll horizontal */
+  .transactions-table-wrapper {
+    overflow-x: auto;
+  }
+
+  /* Tabel transaksi dengan lebar minimum */
+  .transactions-table {
+    min-width: 700px;
+  }
+
+  /* Header admin dengan tata letak fleksibel */
+  .admin-header {
+    flex-wrap: wrap;
+    padding: 0.75rem;
+  }
+
+  /* Judul pada header admin disembunyikan */
+  .admin-header-left h1 {
+    display: none;
+  }
+
+  /* Pencarian admin dengan lebar penuh */
+  .admin-search {
+    order: 3;
+    width: 100%;
+    margin-top: 0.75rem;
+  }
+
+  /* Input pencarian admin */
+  .admin-search input {
+    width: 100%;
+  }
+
+  /* Ringkasan, grafik, dan tabel dashboard dengan satu kolom */
+  .dashboard-summary,
+  .dashboard-charts,
+  .dashboard-tables {
+    grid-template-columns: 1fr;
+  }
+
+  /* Grid produk populer untuk perangkat kecil */
+  .popular-products .products-grid {
+    grid-template-columns: repeat(2, minmax(150px, 200px)); /* Kartu lebih kecil untuk layar mobile */
+    gap: 10px; /* Jarak antar kartu lebih kecil */
+  }
+
+  /* Kartu produk populer pada perangkat kecil */
+  .popular-products .product-card {
+    max-width: 200px; /* Ukuran kartu lebih kecil */
+  }
+
+  /* Gambar pada kartu produk populer */
+  .popular-products .product-image {
+    height: 120px; /* Tinggi gambar lebih kecil */
+  }
+}
+
+/* Extra Small Devices (Portrait Phones, kurang dari 576px) */
+@media (max-width: 575.98px) {
+  /* Kontainer dengan lebar penuh dan padding */
+  .container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  /* Ukuran font untuk heading h1 */
+  h1 {
+    font-size: 2rem;
+  }
+
+  /* Ukuran font untuk heading h2 */
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  /* Bagian hero dengan padding lebih kecil */
+  .hero {
+    padding: 2rem 0;
+  }
+
+  /* Judul pada hero dengan ukuran lebih kecil */
+  .hero-text h1 {
+    font-size: 1.75rem;
+  }
+
+  /* Tombol hero dengan tata letak vertikal */
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Tombol pada hero dengan lebar penuh */
+  .hero-buttons .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Judul pada header bagian */
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Kartu produk dan artikel dengan lebar tetap */
+  .product-card,
+  .article-card {
+    width: 250px;
+  }
+
+  /* Paginasi dengan tata letak fleksibel */
+  .pagination {
+    flex-wrap: wrap;
+  }
+
+  /* Thumbnail produk dengan grid empat kolom */
+  .product-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+  }
+
+  /* Setiap thumbnail produk */
+  .thumbnail {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  /* Opsi warna dan ukuran produk */
+  .product-options .color-options,
+  .product-options .size-options {
+    justify-content: flex-start;
+  }
+
+  /* Tabel keranjang dengan tata letak blok */
+  .cart-table {
+    display: block;
+  }
+
+  /* Header tabel keranjang disembunyikan */
+  .cart-table thead {
+    display: none;
+  }
+
+  /* Elemen tabel keranjang */
+  .cart-table tbody,
+  .cart-table tr,
+  .cart-table td {
+    display: block;
+    width: 100%;
+  }
+
+  /* Baris tabel keranjang */
+  .cart-table tr {
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+  }
+
+  /* Sel tabel keranjang */
+  .cart-table td {
+    border: none;
+    padding: 0.5rem 0;
+    text-align: right;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  /* Label pada sel tabel keranjang */
+  .cart-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 45%;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  /* Produk dalam keranjang dengan tata letak vertikal */
+  .cart-product {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Aksi keranjang dengan tata letak vertikal */
+  .cart-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Formulir kupon dengan lebar penuh */
+  .coupon-form {
+    width: 100%;
+  }
+
+  /* Input kupon dengan lebar penuh */
+  .coupon-input {
+    width: 100%;
+  }
+
+  /* Konten autentikasi dengan padding lebih kecil */
+  .auth-content {
+    padding: 1.5rem;
+  }
+
+  /* Opsi formulir dengan tata letak vertikal */
+  .form-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  /* Konten dashboard admin dengan padding lebih kecil */
+  .admin-content-body {
+    padding: 1rem;
+  }
+
+  /* Header konten dengan tata letak vertikal */
+  .content-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Filter pada header konten */
+  .content-header-filters {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Grup filter dengan lebar penuh */
+  .filter-group {
+    width: 100%;
+  }
+
+  /* Select pada grup filter */
+  .filter-group select {
+    width: 100%;
+  }
+
+  /* Tabel admin dengan lebar minimum */
+  .admin-table {
+    min-width: 800px;
+  }
+
+  /* Konten modal dengan lebar hampir penuh */
+  .modal-content {
+    width: 95%;
+  }
+
+  /* Grid produk populer untuk perangkat sangat kecil */
+  .popular-products .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Satu kolom untuk layar sangat kecil */
+  }
+
+  /* Kartu produk populer dengan lebar penuh */
+  .popular-products .product-card {
+    max-width: 100%; /* Lebar penuh untuk layar sangat kecil */
+  }
+
+  /* Gambar pada kartu produk populer */
+  .popular-products .product-image {
+    height: 100px; /* Tinggi gambar lebih kecil */
+  }
+}
+
+/* Account Layout Styles */
+/* Tata letak akun dengan sidebar dan konten */
+.account-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+/* Sidebar akun yang tetap saat scroll */
+.account-sidebar {
+  position: sticky;
+  top: 5rem;
+  height: fit-content;
+}
+
+/* Informasi pengguna pada sidebar akun */
+.account-user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Avatar pengguna pada sidebar akun */
+.account-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* Gambar pada avatar akun */
+.account-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Judul informasi akun */
+.account-info h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.125rem;
+}
+
+/* Paragraf informasi akun */
+.account-info p {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 0.875rem;
+}
+
+/* Navigasi akun dengan daftar vertikal */
+.account-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Tautan pada navigasi akun */
+.account-nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+/* Efek hover untuk tautan navigasi akun */
+.account-nav a:hover {
+  background-color: var(--background-light);
+}
+
+/* Tautan navigasi akun aktif */
+.account-nav a.active {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+}
+
+/* Ikon pada navigasi akun */
+.account-nav i {
+  width: 20px;
+  text-align: center;
+}
+
+/* Konten akun dengan latar belakang dan bayangan */
+.account-content {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+}
+
+/* Header konten akun */
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Aksi pada header konten */
+.content-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Transaction History Styles */
+/* Wrapper untuk tabel riwayat transaksi */
+.transactions-table-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+/* Tabel riwayat transaksi */
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Sel dan header tabel transaksi */
+.transactions-table th,
+.transactions-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Header tabel transaksi */
+.transactions-table th {
+  font-weight: 600;
+  color: var(--text-light);
+  font-size: 0.875rem;
+}
+
+/* Baris terakhir tabel transaksi tanpa garis bawah */
+.transactions-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Lencana status transaksi */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Status transaksi selesai */
+.status-completed {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--success-color);
+}
+
+/* Status transaksi sedang diproses */
+.status-processing {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: var(--secondary-color);
+}
+
+/* Status transaksi dikirim */
+.status-shipped {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: var(--warning-color);
+}
